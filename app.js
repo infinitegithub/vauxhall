@@ -42,4 +42,9 @@ function handleFormSubmit(event) {
 
   // Get values of input fields and trim leading/trailing whitespace
   const firstName = form.elements.firstName.value.trim();
-  const last
+  const lastName = form.elements.lastName.value.trim();
+  const storeName = form.elements.storeName.value.trim();
+  const location = form.elements.location.value.trim();
+  const address = form.elements.address.value.trim();
+  const storeNumber = form.elements.storeNumber.value.trim();
+  const orderNumber = form.elements.order
