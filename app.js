@@ -50,4 +50,16 @@ function handleFormSubmit(event) {
   const orderNumber = form.elements.orderNumber.value.trim();
 
   // Check that all required input fields have values
-  if (!firstName || !lastName || !storeName || !location ||
+  if (!firstName || !lastName || !storeName || !location || !address || !storeNumber || !orderNumber) {
+    resultDiv.innerHTML = "Please enter all required fields.";
+    return;
+  }
+
+  // Check that store number is in correct format (STxxx)
+  if (!/^ST\d{3}$/.test(storeNumber)) {
+    resultDiv.innerHTML = "Invalid store number. Please enter a store number in the format STxxx (e.g. ST123).";
+    return;
+  }
+
+  // Format input values and set result
+  resultDiv.innerHTML = formatInput(firstName, lastName, storeName, location, address, storeNumber, order
