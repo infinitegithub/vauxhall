@@ -1,65 +1,29 @@
-// Select form element and result div from the DOM
-const form = document.querySelector("form");
-const resultDiv = document.querySelector("#result");
+const form = document.getElementById('form');
+const firstNameInput = document.getElementById('firstName');
+const lastNameInput = document.getElementById('lastName');
+const storeNameInput = document.getElementById('storeName');
+const storeLocationInput = document.getElementById('storeLocation');
+const storeNumberInput = document.getElementById('storeNumber');
+const outputDiv = document.getElementById('output');
 
-/**
- * Formats the input values according to the specified format.
- * @param {string} firstName - The first name of the customer.
- * @param {string} lastName - The last name of the customer.
- * @param {string} storeName - The name of the store.
- * @param {string} location - The location of the store.
- * @param {string} address - The address of the store.
- * @param {string} storeNumber - The store number.
- * @param {string} orderNumber - The order number.
- * @returns {string} The formatted output.
- */
-function formatInput(firstName, lastName, storeName, location, address, storeNumber, orderNumber) {
-  // Format first name
-  const formattedFirstName = `CC REPL OR${orderNumber}`;
-  // Use last name as-is
-  const formattedLastName = lastName;
-  // Format address line 1
-  const formattedAddressLine1 = `${storeName}_${location}`;
-  // Format address line 2
-  const formattedAddressLine2 = `${address} – ${storeNumber}`;
-
-  // Return formatted output as string
-  return `
-    <p>${formattedFirstName}</p>
-    <p>${formattedLastName}</p>
-    <p>${formattedAddressLine1}</p>
-    <p>${formattedAddressLine2}</p>
-  `;
-}
-
-/**
- * Handles form submission.
- * @param {Event} event - The form submission event.
- */
-function handleFormSubmit(event) {
-  // Prevent default form submission behavior
+form.addEventListener('submit', (event) => {
   event.preventDefault();
-
-  // Get values of input fields and trim leading/trailing whitespace
-  const firstName = form.elements.firstName.value.trim();
-  const lastName = form.elements.lastName.value.trim();
-  const storeName = form.elements.storeName.value.trim();
-  const location = form.elements.location.value.trim();
-  const address = form.elements.address.value.trim();
-  const storeNumber = form.elements.storeNumber.value.trim();
-  const orderNumber = form.elements.orderNumber.value.trim();
-
-  // Check that all required input fields have values
-  if (!firstName || !lastName || !storeName || !location || !address || !storeNumber || !orderNumber) {
-    resultDiv.innerHTML = "Please enter all required fields.";
-    return;
+  const firstName = firstNameInput.value;
+  const lastName = lastNameInput.value;
+  const storeName = storeNameInput.value;
+  const storeLocation = storeLocationInput.value;
+  const storeNumber = storeNumberInput.value;
+  let formattedStoreNumber = storeNumber;
+  if (storeNumber.length === 3) {
+    formattedStoreNumber = `ST0${storeNumber}`;
+  } else if (storeNumber.length === 2) {
+    formattedStoreNumber = `ST00${storeNumber}`;
   }
-
-  // Check that store number is in correct format (STxxx)
-  if (!/^ST\d{3}$/.test(storeNumber)) {
-    resultDiv.innerHTML = "Invalid store number. Please enter a store number in the format STxxx (e.g. ST123).";
-    return;
-  }
-
-  // Format input values
-  const formattedInput
+  const output = `
+FIRST NAME: CC REPL OR ${firstName}
+LAST NAME: ${lastName}
+ADDRESS LINE 1: ${storeName} - ${storeLocation}
+ADDRESS LINE 2: Address - ${formattedStoreNumber}
+  `;
+  outputDiv.textContent = output;
+});
