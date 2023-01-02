@@ -2,7 +2,11 @@
 <html>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <style>
+    #output {
+      font-family: monospace;
+    }
+  </style>
 </head>
 
 <body>
@@ -13,6 +17,9 @@
     <label for="lastName">LAST NAME:</label>
     <input type="text" id="lastName" />
     <br />
+    <label for="storeName">STORE NAME:</label>
+    <input type="text" id="storeName" />
+    <br />
     <label for="storeLocation">STORE LOCATION:</label>
     <input type="text" id="storeLocation" />
     <br />
@@ -22,7 +29,37 @@
     <button type="submit">Submit</button>
   </form>
   <div id="output"></div>
-  <script src="script.js"></script>
+  <script>
+    const form = document.getElementById('form');
+    const firstNameInput = document.getElementById('firstName');
+    const lastNameInput = document.getElementById('lastName');
+    const storeNameInput = document.getElementById('storeName');
+    const storeLocationInput = document.getElementById('storeLocation');
+    const storeNumberInput = document.getElementById('storeNumber');
+    const outputDiv = document.getElementById('output');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const firstName = firstNameInput.value;
+      const lastName = lastNameInput.value;
+      const storeName = storeNameInput.value;
+      const storeLocation = storeLocationInput.value;
+      const storeNumber = storeNumberInput.value;
+      let formattedStoreNumber = storeNumber;
+      if (storeNumber.length === 3) {
+        formattedStoreNumber = `ST0${storeNumber}`;
+      } else if (storeNumber.length === 2) {
+        formattedStoreNumber = `ST00${storeNumber}`;
+      }
+      const output = `
+FIRST NAME: CC REPL OR ${firstName}
+LAST NAME: ${lastName}
+ADDRESS LINE 1: ${storeName} - ${storeLocation}
+ADDRESS LINE 2: Address - ${formattedStoreNumber}
+        `;
+      outputDiv.textContent = output;
+    });
+  </script>
 </body>
 
 </html>
