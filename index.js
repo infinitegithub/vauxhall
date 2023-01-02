@@ -1,4 +1,5 @@
 const form = document.querySelector("form");
+const resultDiv = document.querySelector("#result");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -15,8 +16,10 @@ form.addEventListener("submit", (event) => {
   const formattedAddressLine1 = `${addressLine1} – ${storeNumber}`;
   const formattedAddressLine2 = `${addressLine2} – ${storeNumber}`;
 
-  console.log(formattedFirstName);
-  console.log(formattedLastName);
-  console.log(formattedAddressLine1);
-  console.log(formattedAddressLine2);
+  resultDiv.innerHTML = `
+    <p>${formattedFirstName}</p>
+    <p>${formattedLastName}</p>
+    <p>${formattedAddressLine1}</p>
+    <p>${formattedAddressLine2}</p>
+  `;
 });
