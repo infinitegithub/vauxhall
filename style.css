@@ -41,4 +41,5 @@ button[type="submit"]:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: monospace;
+  white-space: pre-wrap;
 }

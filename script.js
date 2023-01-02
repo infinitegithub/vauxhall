@@ -4,6 +4,7 @@ const lastNameInput = document.getElementById('lastName');
 const storeNameInput = document.getElementById('storeName');
 const storeLocationInput = document.getElementById('storeLocation');
 const storeNumberInput = document.getElementById('storeNumber');
+const storeAddressInput = document.getElementById('storeAddress');
 const outputDiv = document.getElementById('output');
 
 form.addEventListener('submit', (event) => {
@@ -13,6 +14,7 @@ form.addEventListener('submit', (event) => {
   const storeName = storeNameInput.value;
   const storeLocation = storeLocationInput.value;
   let storeNumber = storeNumberInput.value;
+  const storeAddress = storeAddressInput.value;
   if (storeNumber.length === 3) {
     storeNumber = `ST0${storeNumber}`;
   } else if (storeNumber.length === 2) {
@@ -22,7 +24,7 @@ form.addEventListener('submit', (event) => {
 FIRST NAME: CC REPL OR ${orderNumber}
 LAST NAME: ${lastName}
 ADDRESS LINE 1: ${storeName} - ${storeLocation}
-ADDRESS LINE 2: ${storeNumber}
+ADDRESS LINE 2: ${storeAddress} - ${storeNumber}
   `;
   outputDiv.textContent = formattedAddress;
 });
