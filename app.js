@@ -42,24 +42,4 @@ function handleFormSubmit(event) {
 
   // Get values of input fields and trim leading/trailing whitespace
   const firstName = form.elements.firstName.value.trim();
-  const lastName = form.elements.lastName.value.trim();
-  const storeName = form.elements.storeName.value.trim();
-  const location = form.elements.location.value.trim();
-  const address = form.elements.address.value.trim();
-  const storeNumber = form.elements.storeNumber.value.trim();
-  const orderNumber = form.elements.orderNumber.value.trim();
-
-  // Check that all required input fields have values
-  if (!firstName || !lastName || !storeName || !location || !address || !storeNumber || !orderNumber) {
-    resultDiv.innerHTML = "Please enter all required fields.";
-    return;
-  }
-
-  // Check that store number is in correct format (STxxx)
-  if (!/^ST\d{3}$/.test(storeNumber)) {
-    resultDiv.innerHTML = "Invalid store number. Please enter a store number in the format STxxx (e.g. ST123).";
-    return;
-  }
-
-  // Format input values and set result
-  resultDiv.innerHTML = formatInput(firstName, lastName, storeName, location, address, storeNumber, order
+  const last
