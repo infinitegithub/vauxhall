@@ -1,96 +1,35 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <style>
-   form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-input {
-  margin-bottom: 10px;
-  padding: 5px;
-}
-
-button {
-  margin-top: 10px;
-  padding: 5px 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer
-}
-  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
-
 <body>
   <form>
+    <h1>Order Form</h1>
     <label for="firstName">First Name:</label><br>
-    <input type="text" id="firstName" name="firstName"><br>
+    <input type="text" id="firstName" name="firstName" required><br>
     <label for="lastName">Last Name:</label><br>
-    <input type="text" id="lastName" name="lastName"><br>
-    <label for="addressLine1">Address Line 1:</label><br>
-    <input type="text" id="addressLine1" name="addressLine1"><br>
-    <label for="addressLine2">Address Line 2:</label><br>
-    <input type="text" id="addressLine2" name="addressLine2"><br>
+    <input type="text" id="lastName" name="lastName" required><br>
+    <label for="storeName">Store Name:</label><br>
+    <input type="text" id="storeName" name="storeName" required><br>
+    <label for="location">Location:</label><br>
+    <input type="text" id="location" name="location" required><br>
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="address" required><br>
     <label for="storeNumber">Store Number:</label><br>
-    <input type="text" id="storeNumber" name="storeNumber"><br>
+    <input type="text" id="storeNumber" name="storeNumber" required><br>
     <label for="orderNumber">Order Number:</label><br>
-    <input type="text" id="orderNumber" name="orderNumber"><br><br>
+    <input type="text" id="orderNumber" name="orderNumber" required><br><br>
     <button type="submit">Submit</button>
   </form>
   
   <div id="result"></div>
+<script src="app.js"></script>
 
-
-  <script>
-  const form = document.querySelector("form");
-    const resultDiv = document.querySelector("#result");
-
-    function formatInput(firstName, lastName, addressLine1, addressLine2, storeNumber, orderNumber) {
-      const formattedFirstName = `CC REPL OR${orderNumber}`;
-      const formattedLastName = lastName;
-      const formattedAddressLine1 = `${addressLine1} – ${storeNumber}`;
-      const formattedAddressLine2 = `${addressLine2} – ${storeNumber}`;
-
-      return `
-    <p>${formattedFirstName}</p>
-    <p>${formattedLastName}</p>
-    <p>${formattedAddressLine1}</p>
-    <p>${formattedAddressLine2}</p>
-  `;
-    }
-
-    function handleFormSubmit(event) {
-      event.preventDefault();
-
-      const firstName = form.elements.firstName.value.trim();
-      const lastName = form.elements.lastName.value.trim();
-      const addressLine1 = form.elements.addressLine1.value.trim();
-      const addressLine2 = form.elements.addressLine2.value.trim();
-      const storeNumber = form.elements.storeNumber.value.trim();
-      const orderNumber = form.elements.orderNumber.value.trim();
-
-      if (!firstName || !lastName || !addressLine1 || !addressLine2 || !storeNumber || !orderNumber) {
-        resultDiv.innerHTML = "Please enter all required fields.";
-        return;
-      }
-
-      if (!/^ST\d{3}$/.test(storeNumber)) {
-        resultDiv.innerHTML = "Invalid store number. Please enter a store number in the format STxxx (e.g. ST123).";
-        return;
-      }
-
-      resultDiv.innerHTML = formatInput(firstName, lastName, addressLine1, addressLine2, storeNumber, orderNumber);
-    }
-
-    form.addEventListener("submit", handleFormSubmit);
-  </script>
+</body>
+</html>
