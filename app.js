@@ -59,6 +59,6 @@ function handleFormSubmit(event) {
   if (!/^ST\d{3}$/.test(storeNumber)) {
     resultDiv.innerHTML = "Invalid store number. Please enter a store number in the format STxxx (e.g. ST123).";
     return;
-  }
+  },
 
   // Format input values and set result
