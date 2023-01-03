@@ -46,3 +46,15 @@ button[type="submit"]:hover {
   white-space: pre-wrap;
   font-size: 14px;
 }
+
+#output {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  font-size: 14px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #f1f1f1;
+}
