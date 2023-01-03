@@ -21,10 +21,10 @@ form.addEventListener('submit', (event) => {
     storeNumber = `ST00${storeNumber}`;
   }
   const formattedAddress = `
-FIRST NAME: CC REPL OR ${orderNumber}
+FIRST NAME: CC REPL OR${orderNumber}
 LAST NAME: ${lastName}
-ADDRESS LINE 1: ${storeName} - ${storeLocation}
-ADDRESS LINE 2: ${storeAddress} - ${storeNumber}
+ADDRESS LINE 1: ${storeName}–${storeLocation}
+ADDRESS LINE 2: ${storeAddress}–${storeNumber}
   `;
   outputDiv.textContent = formattedAddress;
 });
