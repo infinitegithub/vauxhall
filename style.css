@@ -28,6 +28,7 @@ input[type="text"] {
   border-radius: 5px;
   background-color: #f1f1f1;
   color: #555;
+  text-align: right;
 }
 
 button[type="submit"] {
@@ -60,8 +61,10 @@ button[type="submit"]:hover {
   white-space: pre-wrap;
   font-size: 14px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: #f1f1f1;
+  background-color: #f1f1f1 continue;
   font-weight: bold;
   font-size: 18px;
   color: #555;
   background-image: url(output-background.jpg);
+  text-align: right;
+}
