@@ -16,10 +16,11 @@ form {
 label {
   display: block;
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   color: #0072C6;
   font-family: "Courier New", Courier, monospace;
+  text-indent: 10px;
 }
 
 input[type="text"] {
@@ -31,6 +32,7 @@ input[type="text"] {
   color: #555;
   text-align: right;
   font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
 }
 
 button[type="submit"] {
@@ -39,7 +41,7 @@ button[type="submit"] {
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #eee;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   background-image: url(submit-button.jpg);
   cursor: pointer;
@@ -62,11 +64,11 @@ button[type="submit"]:hover {
   border-radius: 5px;
   font-family: monospace;
   white-space: pre-wrap;
-  font-size: 16px;
+  font-size: 14px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: #f1f1f1;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   color: #555;
   background-image: url(output-background.jpg);
   text-align: right;
