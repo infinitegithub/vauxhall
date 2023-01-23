@@ -1,119 +1,4 @@
-body {
-  font-family: sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
 form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #eee;
-  cursor: pointer;
-}
-
-button[type="submit"]:hover {
-  background-color: #ddd;
-}
-
-#output {
-  margin: 20px 0;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: monospace;
-  white-space: pre-wrap;
-  font-size: 14px;
-}
-
-#output {
-  margin: 20px 0;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: monospace;
-  white-space: pre-wrap;
-  font-size: 14px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: #f1f1f1;
-}
-
-please rewrite this with Ux Ui in mind form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: #f1f1f1;
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f1f1f1;
-}
-
-button[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #eee;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button[type="submit"]:hover {
-  background-color: #ddd;
-}
-
-#output {
-  margin: 20px 0;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: monospace;
-  white-space: pre-wrap;
-  font-size: 14px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: #f1f1f1;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-it still looks ugly. so i think some images should be added and a bit of different color. form {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -122,6 +7,10 @@ it still looks ugly. so i think some images should be added and a bit of differe
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: #f1f1f1;
   background-image: url(form-background.jpg);
+
+  @media (max-width: 500px) {
+    max-width: 100%;
+  }
 }
 
 label {
@@ -144,13 +33,18 @@ input[type="text"] {
 button[type="submit"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid continue #ccc;
+  border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #eee;
   font-size: 18px;
   font-weight: bold;
   background-image: url(submit-button.jpg);
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #007AFF;
+  color: #FFF;
 }
 
 button[type="submit"]:hover {
@@ -171,4 +65,3 @@ button[type="submit"]:hover {
   font-size: 18px;
   color: #555;
   background-image: url(output-background.jpg);
-}
