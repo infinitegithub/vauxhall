@@ -2,8 +2,8 @@ form {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 2px solid #0072C6;
+  border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: #f1f1f1;
   background-image: url(form-background.jpg);
@@ -16,36 +16,39 @@ form {
 label {
   display: block;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  color: #555;
+  color: #0072C6;
+  font-family: "Courier New", Courier, monospace;
 }
 
 input[type="text"] {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f1f1f1;
   color: #555;
   text-align: right;
+  font-family: "Courier New", Courier, monospace;
 }
 
 button[type="submit"] {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #eee;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   background-image: url(submit-button.jpg);
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: #007AFF;
+  background-color: #0072C6;
   color: #FFF;
+  font-family: "Courier New", Courier, monospace;
 }
 
 button[type="submit"]:hover {
@@ -59,13 +62,14 @@ button[type="submit"]:hover {
   border-radius: 5px;
   font-family: monospace;
   white-space: pre-wrap;
-  font-size: 14px;
+  font-size: 16px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: #f1f1f1;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   color: #555;
   background-image: url(output-background.jpg);
   text-align: right;
   border: 2px solid #0072C6;
+  font-family: "Courier New", Courier, monospace;
 }
